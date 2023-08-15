@@ -1,0 +1,254 @@
+.justify-text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.AppName {
+    margin: 15px;
+    color: green;
+}
+
+.w-name {
+    width: 35%;
+    height: 10vh;
+    border: 2px solid black;
+}
+
+.m-name {
+    display: none;
+}
+
+.contain-nav {
+    width: 63.8%;
+    height: 10%;
+    position: fixed;
+    right: 1%;
+    border: 2px solid black;
+}
+
+.contain-nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: inherit;
+    width: 100%;
+    margin-top: 27px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li button {
+    border: 1px solid rgb(65, 63, 63);
+}
+
+/* ----- FEED SECTION ----- */
+.bar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+}
+
+.posts,
+.shortcut,
+.profile {
+    width: 99.7%;
+    margin: 7px 0px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.profile{
+    height: 30%;
+    display: flex;
+}
+.profile .user-img{
+    width: 100px;
+    height: 100px;
+    margin: 5px 0 0 20px;
+}
+.profile .user-info {
+    margin: auto 20px;
+}
+.profile .user-info .user-name{
+    font-weight: 700;
+    font-size: large;
+}
+.profile .user-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.posts{
+    height: 35%;
+}
+.posts p{ 
+    margin: 5px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.posts .to-post {
+    margin: auto 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.posts .to-post .create {
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1px;
+    font-size: 13px;
+}
+.shortcut{
+    height: 30%;
+    display: grid;
+    grid-template-columns: .1fr .1fr .1fr .1fr .1fr .1fr;
+    justify-items: center;
+   align-items: center;
+}
+.shortcut .item{
+    margin-left: 20px;
+    padding: 5px;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    justify-self: start; 
+    text-align: center;
+    border: 1px solid black;
+}
+.shortcut .item:hover{
+    cursor: pointer;
+}
+.developer-info {
+    width: 100%;
+    margin-top: 1px;
+    border: 2px solid black;
+    height: 30%;
+}
+
+/* -------- Message route -------- */
+.chats {
+    position: fixed;
+    width: 35%;
+    height: 89%;
+}
+
+.chat-title {
+    height: 12%;
+    font-size: large;
+}
+
+.chat-title h3 {
+    padding-top: 25px;
+    padding-left: 25px;
+}
+
+.chats .people {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.history {
+    width: 100%;
+    height: 14vh;
+    border: 1px solid black;
+}
+
+.current {
+    width: 65%;
+    height: 88vh;
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+
+/* -------- Learn -------- */
+.learn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 65%;
+    height: 88vh;
+    right: 0%;
+    bottom: 0%;
+}
+
+.wrapper {
+    display: grid;
+    width: 90%;
+    height: 80%;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 30px;
+}
+
+.wrapper .item {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.wrapper .item>div {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .item span {
+    color: green;
+}
+
+@media (max-width: 800px) {
+    .m-name {
+        display: block;
+        width: 100%;
+        height: 9vh;
+        border: 2px solid black;
+        position: sticky;
+        top: 0%;
+    }
+
+    .w-name {
+        display: none;
+    }
+
+    .contain-nav {
+        background-color: black;
+        border: none;
+        width: 100%;
+        bottom: 0%;
+        border-radius: 5px;
+    }
+
+    .current {
+        display: none;
+    }
+
+    .learn {
+        margin-top: 0;
+        position: static;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .wrapper {
+        grid-template-columns: 2fr 2fr;
+        gap: 50px;
+    }
+
+    .chats {
+        width: 100%;
+        height: 79%;
+    }
+
+    .connection {
+        display: none;
+    }
+}
