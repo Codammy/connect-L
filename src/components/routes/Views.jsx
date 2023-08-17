@@ -33,7 +33,16 @@ export function Aside()
     <div className='bar'>
     <Side shorts={shorts}/>
     </div>
-    <section className='developer-info' ></section>
+    <section className='developer-info' >
+      <div className="content">
+        <div className="item-1">
+          <span><a href="#">LinkedIn</a></span><span><a href="#">Twitter X</a></span><span><a href="#">Mail</a></span>
+        </div>
+        <div className="item-2"><span><a href="#">Student</a> </span><span><a href="#">Peace-maker</a> </span></div>
+        <div className="item-3"><span><a href="#">Nigerian</a> </span></div>
+        <footer><small>connected learning</small></footer>
+      </div>
+    </section>
     </>
 }
 
