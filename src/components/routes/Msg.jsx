@@ -9,7 +9,7 @@ export  function Chat() {
           </div>
 </>
 }
-export function Current(params) {
+export function Current() {
   return <main className="current"></main>
 }
 export default function Msg() {

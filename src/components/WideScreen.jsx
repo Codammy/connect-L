@@ -13,7 +13,7 @@ export default function WideScreen() {
       <Nav />
     </div>
     <div className='main'>
-        <div className='create-post'></div>
+        <div className='create-post'><span>+</span></div>
       <Main/>
     </div>
   </div>  )
