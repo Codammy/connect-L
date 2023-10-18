@@ -1,0 +1,48 @@
+
+/* -------- Message route -------- */
+.chats {
+    position: fixed;
+    width: 35%;
+    height: 89%;
+}
+
+.chat-title {
+    box-shadow: .1px .1px 2px black;
+    height: 12%;
+    font-size: large;
+}
+
+.chat-title h3 {
+    padding-top: 25px;
+    padding-left: 25px;
+}
+
+.chats .people {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.history {
+    width: 100%;
+    height: 14vh;
+    box-shadow: .1px .1px 2px black;
+}
+
+.current {
+    width: 65%;
+    height: 88vh;
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    box-shadow: .1px .1px 2px black;
+    overflow-y: scroll;
+}
+@media screen and (max-width: 800px) {
+    .current {
+        display: none;
+    }
+    .chats {
+        width: 100%;
+        height: 79%;
+      }
+}

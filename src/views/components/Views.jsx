@@ -1,57 +1,6 @@
-import "./nav.css";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBell,
-  faSquarePollHorizontal,
-  faL,
-  faInbox,
-} from "@fortawesome/free-solid-svg-icons";
-import { } from "@fortawesome/free-regular-svg-icons";
-import profileImg from "../assets/user1.png";
+import profileImg from "../public/assets/user1.png";
 import { nanoid } from "nanoid";
 
-export function Nav() {
-  return (
-    <nav className="contain-nav">
-      <ul>
-        <li>
-          <Link to="/Feeds">
-            <FontAwesomeIcon icon={faSquarePollHorizontal} color="green" />
-          </Link>
-            <span className="current-page"></span>
-        </li>
-        <li>
-          <Link to="/Msg">
-            <FontAwesomeIcon icon={faInbox} color="green" />
-          </Link>
-            <span className="current-page"></span>
-        </li>
-        <li>
-          <Link to="/Learn">
-            <FontAwesomeIcon icon={faL} color="green" />
-          </Link>
-            <span className="current-page"></span>
-        </li>
-        <li>
-          <Link>
-            <FontAwesomeIcon icon={faBell} color="green" />
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  );
-}
-export function History() {
-  const values = Array(10).fill("id");
-  return (
-    <div className="people">
-      {values.map((val, i) => {
-        return <section key={val + i++} className="history"></section>;
-      })}
-    </div>
-  );
-}
 export function Aside() {
   const shorts = ["LR", "NC", "CP", "MR", "SH", "CMT"];
   return (
@@ -95,7 +44,6 @@ export function Shortcuts(shorts) {
   function createNew() {
     return <></>;
   }
-  console.log(shorts);
   return (
   <section className="shortcut">
     <p>Shortcuts</p>
@@ -185,7 +133,7 @@ export function EachPost() {
         <WhoPost />
         <span className="division"></span>
         <PostBody />
-        <span className="division"></span>
+        {/* <span className="division"></span> */}
         <PostAction />
       </article>
   );

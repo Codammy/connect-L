@@ -1,4 +1,7 @@
-import {Nav, Main, Aside, AppName } from "./routes/Views"
+import Nav from "./components/nav"
+import {Main, Aside, AppName } from "./components/Views"
+import "./public/styles/App.css"
+import "./public/styles/nav.css";
 
 export default function WideScreen() {
   return (
@@ -10,7 +13,7 @@ export default function WideScreen() {
       <Aside />
     </div>
     <div className='nav'>
-      <Nav />
+      <Nav feeds='indicate-current-page'/>
     </div>
     <div className='main'>
         <div className='create-post'><span>+</span></div>

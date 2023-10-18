@@ -1,6 +1,8 @@
-import { Nav, History, AppName } from "./Views"
-import "./nav.css"
-
+import { AppName } from "./components/Views"
+import Nav from "./components/nav"
+import { History } from "./components/Views2"
+import "./public/styles/nav.css"
+import "./public/styles/learn.css";
 
 export function Connections() {
   return <>
@@ -38,8 +40,14 @@ export default function Learn(contents) {
     <div className="m-name">
       <AppName />
     </div>
-    <Nav />
+    <div>
+
+    <Nav learning='indicate-current-page' />
+    </div>
+    <div>
+      
     <Connections />
+      </div>
     <Learning contents={contents} />
   </>
 }

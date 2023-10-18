@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: .5em;
+}
+::-webkit-scrollbar-track {
+    background-color: #e2dddd;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+}
+body{
+    max-width: 100%;
+    height: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.App {
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(to bottom right, white, rgb(83, 210, 83));
+}
+
+/** Feeds */
+.main {
+    width: 65%;
+    height: 100%;
+    position: fixed;
+    padding-top: 80px;
+    right: 0%;
+    bottom: 0%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.each-post {
+    width: 97%;
+    margin: 15px;
+    height: fit-content;
+    box-shadow: .1px .1px 2px black;
+    border-radius: 3px;
+    background-color: white;
+}
+.who-post {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+.who-post .img{
+    margin: auto 10px;
+    width: fit-content;
+    height: fit-content;
+    border: 4px solid rgb(154, 245, 154);
+    border-radius: 50%;
+}
+.who-post .other-info{
+    margin: auto 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.post-action {
+    width: 100%;
+    height: 7vh;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+.post-action .each{
+    color: white;
+    text-shadow: 1px 1px 1px green;
+    font-family: cursive;
+    cursor: pointer;
+    margin: auto;
+    font-style: italic;
+}
+.post-action .each:hover{
+    color: green;
+    text-shadow: none;
+}
+.post {
+    width: 90%;
+    height: fit-content;
+    margin: 17px;
+}
+.post p{
+    line-height: 1.2em;
+    opacity: .8;
+}
+.division{
+    display: block;
+    background-color: whitesmoke;
+    height: 5px;
+    width: 100%;
+    margin: auto;
+}
+.aside {
+    position: fixed;
+    height: 88%;
+    width: 35%;
+    bottom: 0;
+}
+.create-post {
+    display: none;
+}
+
+/* ----- FEED SECTION ----- */
+.bar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+}
+
+.posts,
+.shortcut,
+.profile {
+    width: 99.7%;
+    margin: 7px 0px;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: .1px .1px 2px black;
+
+}
+
+.profile {
+    height: 35%;
+    display: flex;
+}
+
+.profile .user-img {
+    border: 5px solid rgb(154, 245, 154);
+    width: fit-content;
+    margin: auto 10px;
+    border-radius: 50%;
+}
+
+.profile .user-info {
+    margin: auto 10px;
+    opacity: .8;
+}
+.profile .user-info span{
+    margin-block: 5px;
+}
+.profile .user-info .followers{
+    display: flex;
+}
+.profile .user-info .account-type{
+    color: green;
+}
+.posts {
+    height: 40%;
+}
+
+.posts p {
+    margin: 5px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: .8;
+}
+
+.posts .to-post {
+    margin: auto 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.posts .to-post .create:hover{
+    background-color: rgb(251, 184, 195);
+    color: white;
+}
+
+.posts .to-post .create {
+    box-shadow: .1px .1px 2px black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1px;
+    font-size: 13px;
+    opacity: .9;
+}
+
+.shortcut {
+    height: 40%;
+}
+.shortcut p{
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: .8;
+}
+.contain-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 15px;
+    width: 85%;
+    height: 87%;
+    margin: 5px 15px;
+}
+.shortcut .item{
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(182, 255, 182);
+    border: none;
+    height: fit-content;
+    padding: 8px 0;
+    color: rgba(0, 0, 0, 0.768);
+}
+.shortcut .item:hover {
+    cursor: pointer;
+    background-color: green;
+    transition: background-color 1s;
+    color: white;
+}
+
+.developer-info {
+    background-color: white;
+    width: 100%;
+    margin-top: 1px;
+    box-shadow: .1px .1px 2px black;
+    height: 30%;
+    border-radius: 2px;
+}
+.developer-info a{
+    opacity: .7;
+    color: green;
+    font-weight: 600;
+}
+.developer-info a:hover{
+    opacity: 1;
+}
+.developer-info .common-attr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.developer-info .common-attr span{
+    margin: 10px 15px;
+}
+.developer-info footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+@media screen and (max-width: 800px) {
+    .aside {
+        display: none;
+    }
+    .main {
+        position: relative;
+        height: 90%;
+        width: 100%;
+        padding-top: 0;
+    }
+    .each-post {
+        margin: 0;
+        width: inherit;
+        margin-block: 7px;
+        box-shadow: .1px .1px 1.4px black;
+    }
+    .post {
+        width: 95%;
+        margin: 10px;
+    }
+    .create-post {
+        background: white;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        bottom: 15%;
+        right: 5%;
+        border-radius: 50%;
+        background-color: rgb(15, 159, 15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+    .create-post span{
+        font-size: 2.5em;
+        font-weight: thin;
+        color: white;
+    }
+}

@@ -1,5 +1,7 @@
-import { Nav, History } from "./Views"
-import "./nav.css"
+import Nav from "./components/nav"
+import { History } from "./components/Views2"
+import "./public/styles/nav.css"
+import "./public/styles/msg.css"
 
 export  function Chat() {
   return <>
@@ -15,7 +17,7 @@ export function Current() {
 export default function Msg() {
   return (
 <>
-    <Nav />
+    <Nav messages='indicate-current-page'/>
     <Chat/>
     <Current />
 </>

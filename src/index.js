@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import Msg from './components/routes/Msg';
-import Learn from './components/routes/Learn';
+import App from './views/App';
+import Msg from './views/Msg';
+import Learn from './views/Learn';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
