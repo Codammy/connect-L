@@ -9,30 +9,35 @@ import {
 import { } from "@fortawesome/free-regular-svg-icons";
 
 export default function Nav({feeds, messages, learning}) {
+  const navColor = (active)=> {
+    if (window.screen.width <= 800)
+      return window.location.pathname === active ? "green" : "#ccc"
+    return 'green'
+    }
   return (
     <nav className="contain-nav">
       <ul>
         <li>
           <Link to="/Feeds">
-            <FontAwesomeIcon icon={faSquarePollHorizontal} color="green" />
+            <FontAwesomeIcon icon={faSquarePollHorizontal} color={navColor('/Feeds')}/>
           </Link>
             <span className={feeds}></span>
         </li>
         <li>
           <Link to="/Msg">
-            <FontAwesomeIcon icon={faInbox} color="green" />
+            <FontAwesomeIcon icon={faInbox} color={navColor('/Msg')} />
           </Link>
             <span className={messages}></span>
         </li>
         <li>
           <Link to="/Learn">
-            <FontAwesomeIcon icon={faL} color="green" />
+            <FontAwesomeIcon icon={faL} color={navColor('/Learn')} />
           </Link>
             <span className={learning}></span>
         </li>
         <li>
           <Link>
-            <FontAwesomeIcon icon={faBell} color="green" />
+            <FontAwesomeIcon icon={faBell} color={navColor('')} />
           </Link>
         </li>
       </ul>

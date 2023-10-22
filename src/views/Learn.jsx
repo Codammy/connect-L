@@ -14,7 +14,11 @@ export function Connections() {
 }
 export function Learning(contents) {
   const select = contents.contents.content;
-
+  function directPage(location) {
+    location = location.replace(' ', '-')
+    location = location.replace('\n', '-')
+    window.location.href = `/learn/${location}`
+  }
   return ( 
   <>
   <div className="learn">
@@ -22,11 +26,11 @@ export function Learning(contents) {
       {
         select.map(each => {
           return (
-            <div className="contain justify-text-center">
-            <div className="item .justify-text-center" key={each.short}>
+            <div className="contain justify-text-center" key={each.long} onClick={()=>directPage(each.long)}>
+            <div className="item justify-text-center" key={each.short}>
                   <span className="short-desc"> {each.short}</span>
               </div>
-                  <span className="long-desc">{each.long}</span>
+                  <span className="long-desc" >{each.long}</span>
             </div>
           )
         })
@@ -40,12 +44,12 @@ export default function Learn(contents) {
     <div className="m-name">
       <AppName />
     </div>
-    <div>
 
+    <div>
     <Nav learning='indicate-current-page' />
     </div>
+
     <div>
-      
     <Connections />
       </div>
     <Learning contents={contents} />

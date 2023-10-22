@@ -1,4 +1,7 @@
 /* -------- Learn -------- */
+.contain-nav {
+    width: 64.75%;
+  }
 .learn {
     position: fixed;
     width: 65%;
@@ -9,10 +12,11 @@
 
 .wrapper {
     display: grid;
-    margin: auto;
+    margin: 15px auto;
     width: 90%;
     grid-template-columns: 2fr 2fr 2fr;
     gap: 30px;
+    height: 85%;
 }
 .wrapper .contain {
     display: flex;
@@ -28,7 +32,13 @@
 .wrapper .contain .item span {
     color: green;
 }
+.wrapper .contain .long-desc {
+    margin-top: 15px;
+}
 @media screen and (max-width: 800px) {
+    .contain-nav {
+        width: 100%;
+      }
     .learn {
         margin-top: 0;
         position: static;
@@ -39,5 +49,6 @@
     .wrapper {
         grid-template-columns: 2fr 2fr;
         gap: 50px;
+        margin: 25px auto;
     }
 }

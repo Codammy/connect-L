@@ -18,14 +18,53 @@
 }
 
 .chats .people {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
 }
 
 .history {
     width: 100%;
-    height: 14vh;
+    height: 12vh;
     box-shadow: .1px .1px 2px black;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+}
+.history .sender-img{
+    border-radius: 50%;
+    box-shadow: .2px .2px 15px #ccc;
+    grid-row: span 2;
+    justify-self: center;
+    align-self: center;
+}
+.history .sender-name{
+    align-self: center;
+    text-transform: capitalize;
+    margin-inline: 20px;
+}
+.history .short-msg{
+    align-self: center;
+    margin-inline: 20px;
+    opacity: .7;
+}
+.history .common{
+    position: absolute;
+    right: 10%;
+}
+.history .unread{
+    width: 20px;
+    height: 20px;
+    background: rgb(154, 245, 154);
+    color: black;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+}
+.history .sentTime{
+    bottom: 10%;
 }
 
 .current {
@@ -34,8 +73,10 @@
     position: fixed;
     right: 0%;
     bottom: 0%;
-    box-shadow: .1px .1px 2px black;
-    overflow-y: scroll;
+    overflow-y: auto;
+}
+.current h1 {
+    font-family: monospace;
 }
 @media screen and (max-width: 800px) {
     .current {

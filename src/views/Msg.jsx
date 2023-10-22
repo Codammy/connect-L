@@ -12,7 +12,9 @@ export  function Chat() {
 </>
 }
 export function Current() {
-  return <main className="current"></main>
+  return <main className="current">
+    <h1 className="justify-text-center">No active messages</h1>
+  </main>
 }
 export default function Msg() {
   return (

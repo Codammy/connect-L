@@ -37,10 +37,10 @@ a {
   background-color: green;
 }
 .contain-nav {
-  width: 63.8%;
+  width: 64%;
   height: 10%;
   position: fixed;
-  right: 1%;
+  right: 0;
   box-shadow: 0.1px 0.2px 2px black;
   background-color: white;
   z-index: 99;
@@ -75,13 +75,9 @@ nav li button {
     background-color: white;
 }
 .indicate-current-page {
-  width: 120%;
-  height: 2px;
-  bottom: -5px;
+  display: none;
 }
-.contain-nav ul li {
-  position: relative;
-}
+
 .w-name {
     display: none;
 }
