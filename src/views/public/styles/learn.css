@@ -1,4 +1,18 @@
 /* -------- Learn -------- */
+.community-title {
+    width: 35%;
+    box-shadow: .1px .1px 2px #ccc;
+    height: 10vh;
+    font-size: large;
+    position: sticky;
+    background-color: white;
+    top: 0%;
+    z-index: 99;
+}
+.community-title h3{
+    position: absolute;
+    margin: 21px;
+}
 .contain-nav {
     width: 64.75%;
   }
@@ -22,23 +36,91 @@
     display: flex;
     flex-direction: column;
 }
+.wrapper .contain a{
+    width: 100%;
+    height: 100%;
+}
 .wrapper .contain .item {
-    box-shadow: .1px .1px 2px black;
+    box-shadow: .1px .1px 2px #ccc;
     border-radius: 5px;
     width: 100%;
     height: 100%;
+}
+.wrapper .contain .item:hover {
+    box-shadow: .5px .5px 12px #ccc;
 }
 
 .wrapper .contain .item span {
     color: green;
 }
 .wrapper .contain .long-desc {
+    display: block;
+    margin-block: 5px;
+}
+
+/* Community section */
+
+.differ{
+    width: 95%;
+    height: 1vh;
+    background: rgb(154, 245, 154);
+    margin: auto;
+    display: block;
+}
+.remove-item{
+    display: flex;
+}
+.remove-item .item{
+    margin-inline: 5px;
+}
+.communities .forums header{
+    display: flex;
+    justify-content: space-between;
+}
+.communities{
+    width: 35%;
+}
+.communities .forums{
+    width: 90%;
+    border-radius: 5px;
+    margin: 20px auto;
+    height: fit-content;
+}
+.communities .forums header h4{
+    color: green;
+}
+
+.communities .forums main{
+    box-shadow: .1px .1px 2px #ccc;
+    width: 95%;
+    margin: 10px auto;
+    position: relative;
+}
+.communities .forums main:hover{
+    transition: 2s;
+    background-color: aliceblue;
+}
+.communities .forums main .name{
     margin-top: 15px;
+    font-weight: 600;
+}
+.communities .forums main p{
+    margin: 5px;
+}
+.communities .forums main small{
+    margin: 15px;
+}
+
+.communities .forums main .group-icon{
+    position: absolute;
+    top: 25%;
+    right: 5%;
 }
 @media screen and (max-width: 800px) {
     .contain-nav {
         width: 100%;
       }
+
     .learn {
         margin-top: 0;
         position: static;
@@ -51,4 +133,7 @@
         gap: 50px;
         margin: 25px auto;
     }
+    .communities, .community-title {
+        display: none;
+      }
 }

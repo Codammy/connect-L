@@ -1,4 +1,4 @@
-import Nav from "./components/nav"
+import Nav from "./components/Nav"
 import { History } from "./components/Views2"
 import "./public/styles/nav.css"
 import "./public/styles/msg.css"

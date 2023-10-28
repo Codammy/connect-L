@@ -1,5 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profileImg from "../public/assets/user1.png";
 import { nanoid } from "nanoid";
+import { faThumbsUp as love, faBookmark as save} from "@fortawesome/free-solid-svg-icons";
+import { faComment,faBookmark, faThumbsUp } from "@fortawesome/free-regular-svg-icons";
+import { useState } from "react";
 
 export function Aside() {
   const shorts = ["LR", "NC", "CP", "MR", "SH", "CMT"];
@@ -154,12 +158,27 @@ export function WhoPost(){
       <div className="time"><small>14:45</small></div>
   </div>
 </section>)}
-export function PostAction() {
+export function PostAction({nOfLikes, comments}) {
+  const [like, useLIke] = useState(faThumbsUp)
+  const [nLike, useNLIke] = useState(nOfLikes)
+  const [bookmark, useBookmark] = useState(faBookmark)
+
+  function HandleLikePost() {
+    useLIke(like === faThumbsUp ? love : faThumbsUp
+      )
+  }
+  function HandleBookmarkPost() {
+    useBookmark(bookmark === faBookmark ? save : faBookmark
+      )
+  }
   return (
       <section className="post-action">
-        <div className="reaction each">Like</div>
-        <div className="comment each">Comment</div>
-        <div className="share each">Share</div>
+        <div className="likes">
+          <small style={{margin: "0px 5px"}}>{nOfLikes}</small>
+        <FontAwesomeIcon icon={like} size="lg" color="green" onClick={HandleLikePost}></FontAwesomeIcon>
+        </div>
+        <FontAwesomeIcon icon={faComment} size="lg" color="green"></FontAwesomeIcon>
+        <FontAwesomeIcon icon={bookmark} size="lg" color="green" onClick={HandleBookmarkPost}></FontAwesomeIcon>
       </section>
   );
 }

@@ -38,7 +38,7 @@ body{
     width: 97%;
     margin: 15px;
     height: fit-content;
-    box-shadow: .1px .1px 2px black;
+    box-shadow: .1px .1px 2px #ccc;
     border-radius: 3px;
     background-color: white;
 }
@@ -66,6 +66,7 @@ body{
     height: 7vh;
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
+    justify-items: center;
 }
 .post-action .each{
     color: white;
@@ -121,7 +122,7 @@ body{
     margin: 7px 0px;
     border-radius: 3px;
     background-color: white;
-    box-shadow: .1px .1px 2px black;
+    box-shadow: .1px .1px 2px #ccc;
 
 }
 
@@ -173,7 +174,7 @@ body{
 }
 
 .posts .to-post .create {
-    box-shadow: .1px .1px 2px black;
+    box-shadow: .1px .1px 2px #ccc;
     border-radius: 15px;
     text-align: center;
     padding: 1px;
@@ -218,7 +219,7 @@ body{
     background-color: white;
     width: 100%;
     margin-top: 1px;
-    box-shadow: .1px .1px 2px black;
+    box-shadow: .1px .1px 2px #ccc;
     height: 30%;
     border-radius: 2px;
 }
@@ -257,7 +258,7 @@ body{
         margin: 0;
         width: inherit;
         margin-block: 7px;
-        box-shadow: .1px .1px 1.4px black;
+        box-shadow: .1px .1px 1.4px #ccc;
     }
     .post {
         width: 95%;
