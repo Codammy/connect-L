@@ -20,6 +20,7 @@
 .chats .people {
     overflow-y: auto;
     height: 100%;
+    background-color: #ccc;
 }
 
 .history {
@@ -29,6 +30,14 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     position: relative;
+    background-color: white;
+}
+.history:hover {
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    transition: .5s;
+    border-radius: 5px;
 }
 .history .sender-img{
     border-radius: 50%;
@@ -77,6 +86,69 @@
 }
 .current h1 {
     font-family: monospace;
+}
+.current .active-message {
+    margin: auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.current .new-message {
+    margin: auto;
+    width: 50vw;
+    bottom: 5%;
+    position: fixed;
+    display: flex;
+}
+.current .new-message textarea{
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    resize: none;
+    font-size: 17px;
+    width: inherit;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid grey;
+
+}
+.current .new-message h4{
+    margin: auto 15px;
+}
+.current .new-message textarea:focus{
+    outline-color: rgb(154, 245, 154);
+    outline-style: solid;
+    font-size: 16px;
+    outline-width: 2px;
+}
+.current .active-message aside{
+    background-color: rgb(154, 245, 154);
+    height: fit-content;
+    padding: 8px;
+    color: black;
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 50%;
+
+}
+.current .active-message aside p{
+    line-height: 1.2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    word-spacing: 2%;
+    margin: 7px;
+}
+.current .active-message aside .time{
+    display: flex;
+}
+.current .active-message aside .time p{
+    margin-left: auto;
+    font-size: 12px;
+}
+.current .active-message .reciever{
+    margin-left: auto;
+    margin-top: 5px;
 }
 @media screen and (max-width: 800px) {
     .current {

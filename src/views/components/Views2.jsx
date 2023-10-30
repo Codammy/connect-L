@@ -1,11 +1,11 @@
 import profileImg from "../public/assets/user1.png";
 
-export function History() {
+export function History({HandleActiveMessage}) {
   const unreadDms = 1
   const sentTime = "11:47"
     const values = Array(10).fill("id");
     return (
-      <div className="people">
+      <div className="people" onClick={HandleActiveMessage}>
         {values.map((val, i) => {
           return <section key={val + i++} className="history">
             <div className="sender-img">

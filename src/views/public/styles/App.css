@@ -57,9 +57,18 @@ body{
 }
 .who-post .other-info{
     margin: auto 10px;
-    width: 60%;
+    width: fit-content;
     display: flex;
     flex-direction: column;
+}
+.post-type {
+    width: fit-content;
+}
+.post-type span{
+    margin-inline: 3px;
+    color: rgb(49, 48, 48);
+    font-size: small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .post-action {
     width: 100%;
@@ -257,7 +266,7 @@ body{
     .each-post {
         margin: 0;
         width: inherit;
-       /* margin-block: 7px;*/
+        margin-block: 7px;
         box-shadow: .1px .1px 1.4px #ccc;
     }
     .post {
