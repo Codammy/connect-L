@@ -5,7 +5,13 @@ export function History({HandleActiveMessage}) {
   const sentTime = "11:47"
     const values = Array(10).fill("id");
     return (
-      <div className="people" onClick={HandleActiveMessage}>
+      <div className="people" onClick={()=>{
+        const current = document.getElementById('curr')
+        current.classList.add('slide-current')
+        current.classList.remove('curr')
+        HandleActiveMessage()
+      }       
+        }>
         {values.map((val, i) => {
           return <section key={val + i++} className="history">
             <div className="sender-img">

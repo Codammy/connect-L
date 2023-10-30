@@ -78,16 +78,17 @@
 
 .current {
     width: 65%;
-    height: 88vh;
+    height: 83vh;
     position: fixed;
     right: 0%;
-    bottom: 0%;
+    bottom: 5%;
     overflow-y: auto;
 }
 .current h1 {
     font-family: monospace;
 }
 .current .active-message {
+    position: relative;
     margin: auto;
     height: fit-content;
     display: flex;
@@ -120,7 +121,8 @@
     outline-color: rgb(154, 245, 154);
     outline-style: solid;
     font-size: 16px;
-    outline-width: 2px;
+    outline-width: 3px;
+    color: rgb(41, 40, 40);
 }
 .current .active-message aside{
     background-color: rgb(154, 245, 154);
@@ -151,8 +153,15 @@
     margin-top: 5px;
 }
 @media screen and (max-width: 800px) {
-    .current {
-        display: none;
+    .curr {
+        right: -100%;
+        transition: .5s;
+        background-color: white;
+    }
+    .slide-current {
+        width: 100%;
+        background-color: white;
+        transition: .5s;
     }
     .chats {
         width: 100%;

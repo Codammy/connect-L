@@ -4,28 +4,41 @@ import "./public/styles/nav.css"
 import "./public/styles/msg.css"
 import { useState } from "react"
 import { nanoid } from "nanoid"
-import { useEffect } from "react"
 
-function ActiveMessage({ messages }) {
+function ActiveMessage({ messages, HandleActiveMessage }) {
+  function HandleRenderMessage(textArea) {
+    if (textArea.value === '' || textArea.value.trim() === '')
+      return
+    const sentTime = new Date()
+    messages.push({
+      active: "reciever",
+      body: textArea.value,
+      time: `${sentTime.getHours()}:${sentTime.getMinutes()}`
+    })
+    textArea.value = ''
+    HandleActiveMessage(<ActiveMessage messages={messages} HandleActiveMessage={HandleActiveMessage} />)
+  }
   return (
     <section className="active-message">
       {
-    messages.map(msg =>{
-      return (
-              <aside className={msg.active === "sender" ? "sender" : "reciever"} id={nanoid()}>
-    <div className="body"><p>{msg.body.toString("Base16")}</p></div>
-    <div className="time"><p>{msg.time}</p></div>
-  </aside>
-      )
-    })      }
-    <div className="new-message">
-      <textarea name="message" id="text" cols="30" rows="1" placeholder="Send new message..."></textarea>
-      <h4>Send</h4>
-    </div>
+        messages.map(msg => {
+          return (
+            <aside key={nanoid()} className={msg.active === "sender" ? "sender" : "reciever"} id={nanoid()}>
+              <div className="body"><p>{msg.body}</p></div>
+              <div className="time"><p>{msg.time}</p></div>
+            </aside>
+          )
+        })}
+      <div className="new-message">
+        <textarea name="message" id="text" cols="30" rows="1" placeholder="Send new message..."></textarea>
+        <h4 onClick={
+          () => HandleRenderMessage(document.getElementById('text'))
+        }>Send</h4>
+      </div>
     </section>
   )
 }
-export function Chat({HandleActiveMessage}) {
+export function Chat({ HandleActiveMessage }) {
   return <>
     <div className="chats">
       <header className="chat-title"><h3>Messages</h3></header>
@@ -34,14 +47,14 @@ export function Chat({HandleActiveMessage}) {
   </>
 }
 
-export function Current({activeMessage}) {
-  return <main className="current">
+export function Current({ activeMessage }) {
+  return <main className="current curr" id="curr">
     {activeMessage}
   </main>
 }
 
 export default function Msg() {
-  const messages = [
+  let messages = [
     {
       active: "sender",
       body: "Hello user, welcome to your first interactive message.",
@@ -62,12 +75,12 @@ export default function Msg() {
     <h1 className="justify-text-center">No active messages</h1>)
 
   function HandleActiveMessage() {
-    setActiveMessage(<ActiveMessage messages={messages} />)
+    setActiveMessage(<ActiveMessage messages={messages} HandleActiveMessage={HandleActiveMessage} />)
   }
   return (
     <>
       <Nav messages='indicate-current-page' />
-      <Chat HandleActiveMessage={HandleActiveMessage}/>
+      <Chat HandleActiveMessage={HandleActiveMessage} />
       <Current activeMessage={activeMessage} />
     </>
   )
