@@ -98,9 +98,13 @@
 .current .new-message {
     margin: auto;
     width: 50vw;
-    bottom: 5%;
     position: fixed;
     display: flex;
+    transition: .2s;
+}
+.current .keyboard {
+    bottom: 5%;
+    transition: .4s;
 }
 .current .new-message textarea{
     display: block;
@@ -112,7 +116,6 @@
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid grey;
-
 }
 .current .new-message h4{
     margin: auto 15px;
@@ -127,12 +130,11 @@
 .current .active-message aside{
     background-color: rgb(154, 245, 154);
     height: fit-content;
-    padding: 8px;
+    padding: 5px;
     color: black;
     border-radius: 5px;
     width: fit-content;
     max-width: 50%;
-
 }
 .current .active-message aside p{
     line-height: 1.2em;
@@ -152,7 +154,32 @@
     margin-left: auto;
     margin-top: 5px;
 }
+.current .active-message .messenger{
+    position: sticky;
+    top: 0%;
+    margin-block: 5px;
+}
+.current .active-message .messenger .prev{
+    display: none;
+}
+.keyboard-focus:hover{
+    color: grey;
+}
+.hide-keyboard {
+    transition: .5s;
+    bottom: -50%;
+}
+.messenger{
+    background-color: white;
+}
 @media screen and (max-width: 800px) {
+    .current .active-message .messenger .prev{
+        display: block;
+        margin: 3px;
+    }
+    .current .active-message .messenger .prev span{
+        margin-inline: 4px;
+    }
     .curr {
         right: -100%;
         transition: .5s;
@@ -161,10 +188,22 @@
     .slide-current {
         width: 100%;
         background-color: white;
-        transition: .5s;
+        transition: .2s;
+        top: 9%;
     }
     .chats {
         width: 100%;
         height: 79%;
       }
+      .current .keyboard {
+        bottom: 5%;
+        width: 93%;
+    }
+    .current .active-message aside{
+        margin-block: 5px;
+    }
+    .slide-bottom {
+        transition: .2s;
+        bottom: -50%;
+    }
 }

@@ -4,8 +4,14 @@ import "./public/styles/nav.css"
 import "./public/styles/msg.css"
 import { useState } from "react"
 import { nanoid } from "nanoid"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import profileImg from "./public/assets/user1.png";
+import { faArrowAltCircleLeft, faKeyboard } from "@fortawesome/free-solid-svg-icons"
+import { faPaperPlane as lightPaperPlane } from "@fortawesome/free-regular-svg-icons"
+
 
 function ActiveMessage({ messages, HandleActiveMessage }) {
+  const icon = lightPaperPlane
   function HandleRenderMessage(textArea) {
     if (textArea.value === '' || textArea.value.trim() === '')
       return
@@ -18,8 +24,27 @@ function ActiveMessage({ messages, HandleActiveMessage }) {
     textArea.value = ''
     HandleActiveMessage(<ActiveMessage messages={messages} HandleActiveMessage={HandleActiveMessage} />)
   }
+
   return (
     <section className="active-message">
+      <div className="messenger">
+          <span className="prev" onClick={()=>{
+        const current = document.getElementById('curr')
+        const nav = document.getElementsByClassName('contain-nav')[0]
+                  current.classList.remove('slide-current')
+                  nav.classList.remove('slide-bottom')
+                  nav.classList.add('slide-up')
+                  current.classList.add('curr')
+                }
+        }>
+          <FontAwesomeIcon icon={faArrowAltCircleLeft}/>
+          <span>Go back</span>
+        </span>
+        <div className="whom">
+          <img src="" alt="" />
+          <p>{messages.isName}</p>
+        </div>
+      </div>
       {
         messages.map(msg => {
           return (
@@ -29,15 +54,22 @@ function ActiveMessage({ messages, HandleActiveMessage }) {
             </aside>
           )
         })}
-      <div className="new-message">
+              <FontAwesomeIcon icon={faKeyboard} style={{margin: "5px", position:"fixed", bottom:"12%"}} color="#ccc" className="keyboard-focus" onClick={()=>{
+          const keyboard = document.getElementsByClassName('new-message')[0]
+            keyboard.classList.toggle('keyboard')
+            keyboard.classList.toggle('hide-keyboard')
+        }}/>
+      <div className="new-message keyboard">
         <textarea name="message" id="text" cols="30" rows="1" placeholder="Send new message..."></textarea>
-        <h4 onClick={
+        <FontAwesomeIcon icon={icon} onClick={
           () => HandleRenderMessage(document.getElementById('text'))
-        }>Send</h4>
+        } style={{margin: "auto 5px"}} color="green" size="xl"></FontAwesomeIcon>
       </div>
+
     </section>
   )
 }
+
 export function Chat({ HandleActiveMessage }) {
   return <>
     <div className="chats">
@@ -57,16 +89,19 @@ export default function Msg() {
   let messages = [
     {
       active: "sender",
+      isName: "Adedamola Jacobs",
       body: "Hello user, welcome to your first interactive message.",
       time: "17:59"
     },
     {
       active: "reciever",
+      isName: "Codam Fury",
       body: "What's your name ?",
       time: "17:59"
     },
     {
       active: "sender",
+      isName: "Adedamola Jacobs",
       body: "Call me Codam ☺\n Virtual assistant",
       time: "18:00"
     },

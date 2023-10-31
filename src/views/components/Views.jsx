@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import profileImg from "../public/assets/user1.png";
 import { nanoid } from "nanoid";
-import { faThumbsUp as love, faBookmark as save } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faInstitution, faThumbsUp as love, faBookmark as save } from "@fortawesome/free-solid-svg-icons";
 import { faComment, faBookmark, faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
+import { faGithub, faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export function Aside() {
   const shorts = ["LR", "NC", "CP", "MR", "SH", "CMT"];
@@ -32,6 +33,9 @@ export function Main({ mode }) {
       <EachPost />
       <EachPost />
       <EachPost />
+      <div className="load-icon">
+        <p>Loading...</p>
+      </div>
     </main>
   );
 }
@@ -104,21 +108,21 @@ export function Copyright() {
   return (<section className="developer-info">
     <div className="contact common-attr">
       <span>
-        <a href="https://www.linkedin.com/in/damilola-abdulmalik">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/damilola-abdulmalik"><FontAwesomeIcon icon={faLinkedin} size="xl" color="gray"/></a>
       </span>
       <span>
-        <a href="https://www.twitter.com/damilolaabdulm1">Twitter X</a>
+        <a href="https://www.twitter.com/damilolaabdulm1"><FontAwesomeIcon icon={faXTwitter} size="xl" color="gray"/></a>
       </span>
       <span>
-        <a href="https://damisco005@gmail.com">Mail</a>
+        <a href="https://damisco005@gmail.com"><FontAwesomeIcon icon={faEnvelope} size="xl" color="gray"/></a>
       </span>
     </div>
     <div className="bio common-attr">
       <span>
-        <a href="https://github.com/codammy">Student</a>{" "}
+        <a href="https://github.com/codammy"><FontAwesomeIcon icon={faGithub} size="xl" color="gray"/></a>
       </span>
       <span>
-        <a href="https://">Peace-maker</a>{" "}
+        <a href="https://federalpolyilaro.edu.ng"><FontAwesomeIcon icon={faInstitution} size="xl" color="gray"/></a>
       </span>
     </div>
     <div className="city common-attr">
@@ -198,14 +202,18 @@ export function PostAction({ nOfLikes, comments }) {
   }
   return (
     <section className="post-action">
-      <div className="likes">
+      <div className="act">
         <span>
           <small style={{ margin: "0px 5px" }}>{nLike}</small>
         </span>
         <FontAwesomeIcon icon={like} size="lg" color="green" onClick={HandleLikePost}></FontAwesomeIcon>
       </div>
+      <div className="act">
       <FontAwesomeIcon icon={faComment} size="lg" color="green"></FontAwesomeIcon>
+      </div>
+      <div className="act">
       <FontAwesomeIcon icon={bookmark} size="lg" color="green" onClick={HandleBookmarkPost}></FontAwesomeIcon>
+      </div>
     </section>
   );
 }

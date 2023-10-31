@@ -20,7 +20,6 @@ const content = [
   { long: "Career Path", short: "CP" },
   { long: "Make Research", short: "MR" },
   { long: "BookMarks", short: "BK" },
-  { long: "Communities", short: "CMT" },
 ]
 root.render(
   <React.StrictMode>

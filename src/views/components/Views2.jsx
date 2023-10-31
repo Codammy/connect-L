@@ -7,7 +7,10 @@ export function History({HandleActiveMessage}) {
     return (
       <div className="people" onClick={()=>{
         const current = document.getElementById('curr')
+        const nav = document.getElementsByClassName('contain-nav')[0]
         current.classList.add('slide-current')
+        nav.classList.remove('slide-up')
+        nav.classList.add('slide-bottom')
         current.classList.remove('curr')
         HandleActiveMessage()
       }       

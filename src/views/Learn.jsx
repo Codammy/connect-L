@@ -38,12 +38,21 @@ export function Learning(contents) {
           )
         })
       }
+      <div className="contain justify-text-center">
+      <Link to= ''>
+            <div className="item justify-text-center" >
+                  <span className="short-desc">CMT</span>
+              </div>
+                  <span className="long-desc" >Community</span>
+    </Link>
+            </div>
     </div>
+
   </div>
   </>
 )}
 export default function Learn(contents) {
-  return <>
+  return <article className="mother">
     <div className="m-name">
       <AppName />
     </div>
@@ -56,5 +65,5 @@ export default function Learn(contents) {
     <Connections />
       </div>
     <Learning contents={contents} />
-  </>
+  </article>
 }

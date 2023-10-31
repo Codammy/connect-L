@@ -15,7 +15,7 @@ export default function Nav({feeds, messages, learning}) {
     return 'green'
     }
   return (
-    <nav className="contain-nav">
+    <nav className="contain-nav slide-up">
       <ul>
         <li>
           <Link to="/Feeds">
