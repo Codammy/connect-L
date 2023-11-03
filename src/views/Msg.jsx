@@ -5,7 +5,7 @@ import "./public/styles/msg.css"
 import { useState } from "react"
 import { nanoid } from "nanoid"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import profileImg from "./public/assets/user1.png";
+//import profileImg from "./public/assets/user1.png";
 import { faArrowAltCircleLeft, faKeyboard } from "@fortawesome/free-solid-svg-icons"
 import { faPaperPlane as lightPaperPlane } from "@fortawesome/free-regular-svg-icons"
 

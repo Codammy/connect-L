@@ -33,6 +33,11 @@ export function Main({ mode }) {
       <EachPost />
       <EachPost />
       <EachPost />
+      <EachPost />
+      <EachPost />
+      <EachPost />
+      <EachPost />
+      <EachPost />
       <div className="load-icon">
         <p>Loading...</p>
       </div>
