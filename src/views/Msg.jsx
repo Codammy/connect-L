@@ -9,7 +9,6 @@ import profileImg from "./public/assets/user1.png";
 import { faArrowAltCircleLeft, faKeyboard } from "@fortawesome/free-solid-svg-icons"
 import { faPaperPlane as lightPaperPlane } from "@fortawesome/free-regular-svg-icons"
 
-
 function ActiveMessage({ messages, HandleActiveMessage }) {
   const [sendIcon, setSendIcon] = useState(lightPaperPlane)
   function HandleRenderMessage(textArea) {

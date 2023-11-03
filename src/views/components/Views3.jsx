@@ -5,6 +5,7 @@ import mentorIcon from "../public/assets/mentorship.png";
 import collabIcon from "../public/assets/project-collaboration.png";
 import { faCircleMinus, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
+
 function Community({ community, TYPE }) {
     const { gName, groupDesc, topMessage, members, time, logo } = { ...community }
     const n = Math.ceil(Math.random() * 5)

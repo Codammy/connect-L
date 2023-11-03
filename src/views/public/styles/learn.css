@@ -1,4 +1,7 @@
 /* -------- Learn -------- */
+.prev{
+    display: none;
+}
 .mother {
     background: linear-gradient(to top left, rgb(154, 245, 154), white);
 }
@@ -127,6 +130,12 @@
     right: 5%;
 }
 @media screen and (max-width: 800px) {
+    .prev{
+        display: block;
+        margin: 3px;
+    }.prev span{
+        margin-inline: 4px;
+    }
     .contain-nav {
         width: 100%;
       }
@@ -144,8 +153,13 @@
         margin: 25px auto;
     }
     .communities, .community-title {
+        left: -100%;
     position: absolute;
         width: 100%;
+      }
+      .show-communities{
+        transition: .2s;
+        left: 0;
       }
     .communities {
         padding-bottom: 40px;

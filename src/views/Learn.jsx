@@ -4,11 +4,21 @@ import "./public/styles/nav.css"
 import "./public/styles/learn.css";
 import { Link } from "react-router-dom";
 import Communities from "./components/Views3";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSignOut, faTentArrowTurnLeft } from "@fortawesome/free-solid-svg-icons"
 
 export function Connections() {
   return <>
       <header className="community-title"><h3>Communities</h3></header>
       <div className="communities">
+      <span className="prev" onClick={()=>{
+        const communities = document.getElementsByClassName('communities')[0]
+        communities.classList.toggle('show-communities')
+                }
+        }>
+          <FontAwesomeIcon icon={faSignOut}/>
+          <span>Go back</span>
+        </span>
       <Communities />
       </div>
   </>
@@ -59,11 +69,9 @@ export default function Learn(contents) {
     <div className="m-name">
       <AppName />
     </div>
-
     <div>
     <Nav learning='indicate-current-page' />
     </div>
-
     <div>
     <Connections />
       </div>
