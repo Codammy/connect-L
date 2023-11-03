@@ -7,7 +7,7 @@ import { faCircleMinus, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 
 function Community({ community, TYPE }) {
-    const { gName, groupDesc, topMessage, members, time, logo } = { ...community }
+    const { gName, groupDesc, topMessage, members, logo } = { ...community }
     const n = Math.ceil(Math.random() * 5)
     const elem = Array(n).fill("id")
 
