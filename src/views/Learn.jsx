@@ -38,7 +38,10 @@ export function Learning(contents) {
           )
         })
       }
-      <div className="contain justify-text-center">
+      <div className="contain justify-text-center" onClick={()=>{
+        const communities = document.getElementsByClassName('communities')[0]
+        communities.classList.toggle('show-communities')
+      }}>
       <Link to= ''>
             <div className="item justify-text-center" >
                   <span className="short-desc">CMT</span>

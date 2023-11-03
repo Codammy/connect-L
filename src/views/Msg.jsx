@@ -11,7 +11,7 @@ import { faPaperPlane as lightPaperPlane } from "@fortawesome/free-regular-svg-i
 
 
 function ActiveMessage({ messages, HandleActiveMessage }) {
-  const icon = lightPaperPlane
+  const [sendIcon, setSendIcon] = useState(lightPaperPlane)
   function HandleRenderMessage(textArea) {
     if (textArea.value === '' || textArea.value.trim() === '')
       return
@@ -61,7 +61,7 @@ function ActiveMessage({ messages, HandleActiveMessage }) {
         }}/>
       <div className="new-message keyboard">
         <textarea name="message" id="text" cols="30" rows="1" placeholder="Send new message..."></textarea>
-        <FontAwesomeIcon icon={icon} onClick={
+        <FontAwesomeIcon icon={sendIcon} onClick={
           () => HandleRenderMessage(document.getElementById('text'))
         } style={{margin: "auto 5px"}} color="green" size="xl"></FontAwesomeIcon>
       </div>

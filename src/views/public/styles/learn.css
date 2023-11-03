@@ -144,6 +144,10 @@
         margin: 25px auto;
     }
     .communities, .community-title {
-        display: none;
+    position: absolute;
+        width: 100%;
+      }
+    .communities {
+        padding-bottom: 40px;
       }
 }
