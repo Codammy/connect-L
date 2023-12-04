@@ -1,0 +1,167 @@
+/* -------- Learn -------- */
+.prev{
+    display: none;
+}
+.mother {
+    background: linear-gradient(to top left, rgb(154, 245, 154), white);
+}
+.community-title {
+    width: 35%;
+    box-shadow: .1px .1px 2px #ccc;
+    height: 10vh;
+    font-size: large;
+    position: sticky;
+    background-color: white;
+    top: 0%;
+    z-index: 99;
+}
+.community-title h3{
+    position: absolute;
+    margin: 21px;
+}
+.contain-nav {
+    width: 64.75%;
+  }
+.learn {
+    position: fixed;
+    width: 65%;
+    height: 88vh;
+    right: 0%;
+    bottom: 0%;
+}
+
+.wrapper {
+    display: grid;
+    margin: 15px auto;
+    width: 90%;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 30px;
+    height: 85%;
+}
+.wrapper .contain {
+    display: flex;
+    flex-direction: column;
+}
+.wrapper .contain a{
+    width: 100%;
+    height: 100%;
+}
+.wrapper .contain .item {
+    box-shadow: .1px .1px 2px #ccc;
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+.wrapper .contain .item:hover {
+    box-shadow: .5px .5px 12px #ccc;
+}
+
+.wrapper .contain .item span {
+    color: green;
+}
+.wrapper .contain .long-desc {
+    display: block;
+    margin-block: 5px;
+}
+
+/* Community section */
+
+.differ{
+    width: 95%;
+    height: 1vh;
+    background: rgb(154, 245, 154);
+    margin: auto;
+    display: block;
+}
+.remove-item{
+    display: flex;
+}
+.remove-item .item{
+    margin-inline: 5px;
+}
+.communities .forums header{
+    display: flex;
+    justify-content: space-between;
+}
+.communities{
+    width: 35%;
+    background-color: white;
+    box-shadow: .2px .2px 4px #ccc;
+    padding-block: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.communities .forums{
+    width: 90%;
+    border-radius: 5px;
+    margin: 20px auto;
+    height: fit-content;
+}
+.communities .forums header h4{
+    color: green;
+}
+
+.communities .forums main{
+    padding-block: 2px;
+    box-shadow: .1px .1px 2px #ccc;
+    width: 95%;
+    margin: 10px auto;
+    position: relative;
+}
+.communities .forums main:hover{
+    transition: 2s;
+    background-color: aliceblue;
+}
+.communities .forums main .name{
+    margin-block: 5px;
+    font-weight: 600;
+}
+.communities .forums main p{
+    margin: 5px;
+}
+.communities .forums main small{
+    margin: 15px;
+}
+
+.communities .forums main .group-icon{
+    position: absolute;
+    top: 25%;
+    right: 5%;
+}
+@media screen and (max-width: 800px) {
+    .prev{
+        display: block;
+        margin: 3px;
+    }.prev span{
+        margin-inline: 4px;
+    }
+    .contain-nav {
+        width: 100%;
+      }
+
+    .learn {
+        margin-top: 0;
+        position: static;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .wrapper {
+        grid-template-columns: 2fr 2fr;
+        gap: 50px;
+        margin: 25px auto;
+    }
+    .communities, .community-title {
+        left: -100%;
+    position: absolute;
+        width: 100%;
+      }
+      .show-communities{
+        transition: .2s;
+        left: 0;
+      }
+    .communities {
+        padding-bottom: 40px;
+      }
+}
