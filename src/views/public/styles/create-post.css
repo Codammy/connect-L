@@ -1,0 +1,50 @@
+.post-container {
+  padding: 10px;
+  background-color: white;
+  margin-inline: 18px;
+  border-radius: 3px;
+  box-shadow: 0.1px 0.1px 2px #ccc;
+  z-index: 99;
+  border: 1px solid #ccc;
+}
+.post-container textarea {
+  width: 90%;
+  border: none;
+  border-bottom: 3px solid #ccc;
+  padding-block: 5px;
+  resize: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+.to-send {
+  transition: 0.5s;
+  cursor: pointer;
+}
+.send {
+  transition: 0.5s;
+  cursor: pointer;
+}
+.to-send:hover {
+  transition: 0.5s;
+}
+.send:hover {
+  transition: 0.5s;
+}
+.other-post-format .i {
+  margin: 10px 5px;
+  font-size: 25px;
+}
+.other-post-format .i:hover {
+  font-size: 30px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.contain-post {
+  margin-block: 10px;
+}
+@media (max-width: 768px) {
+  .post-container {
+    display: none;
+  }
+}

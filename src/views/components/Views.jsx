@@ -39,7 +39,7 @@ export function Main({ mode }) {
       <EachPost />
       <EachPost />
       <div className="load-icon">
-        <p>Loading...</p>
+        <p>Api integration underway...</p>
       </div>
     </main>
   );
